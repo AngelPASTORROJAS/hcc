@@ -6,7 +6,7 @@ const app = express();
 /* Importing the databaseBuilder module. */
 const DatabaseBuilder = require("./databaseBuilder");
 /* Creating a new database called database.db. */
-const db = new DatabaseBuilder("autre.db");
+const db = new DatabaseBuilder("mydatabase.db");
 
 
 /* Inserting a new row into the users table. The first argument is the SQL statement, and the second

@@ -8,6 +8,7 @@ class DatabaseBuilder {
    */
   constructor(filename) {
     this.db = new sqlite3.Database(filename);
+    this.build();
   }
 
   build() {
