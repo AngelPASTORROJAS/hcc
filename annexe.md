@@ -7,7 +7,7 @@
 Le H.C.C a pris la décision de mettre en place une API REST afin de de fournir des informations en temps réel sur les matchs et les événements, ainsi que des mises à jour régulières sur les actualités du club.  Public et adhérents, pourront ainsi pourront ainsi s’informer sur club à travers son future site internet et son application mobile.
 
 3. EXIGENCES TECHNIQUES
-      - [ ] L'API sera développée en utilisant NodeJS et une base de données SQLite.
+      - [x] L'API sera développée en utilisant NodeJS et une base de données SQLite.
       - [ ] L’API doit être prendre en compte 3 aspects fonctionnelles :
         - [ ] gestion de l’authentification, 
         - [ ] gestion des actualités,

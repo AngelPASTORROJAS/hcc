@@ -9,7 +9,7 @@ const app = express();
 const db = new sqlite3.Database("mydatabase.db");
 
 /* Creating a table called users with two columns, id and name. */
-db.run("CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)");
+db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)");
 /* Inserting a new row into the users table. The first argument is the SQL statement, and the second
 argument is an array of values to be inserted into the statement. */
 db.run("INSERT INTO users (name) VALUES (?)", ["John Doe"]);
@@ -24,8 +24,8 @@ argument is a callback function that is executed when the statement is completed
 function takes two arguments, err and rows. The err argument is an error object, and the rows
 argument is an array of rows returned from the statement. The res.json method is used to send a JSON
 response containing the rows. */
-app.get("/users", (req, res) => {
-  db.all("SELECT * FROM users", (err, rows) => {
+app.get("/users", (_req, res) => {
+  db.all("SELECT * FROM users", (_err, rows) => {
     res.json(rows);
   });
 });
