@@ -27,5 +27,5 @@ config/
 ##les répertoires de build générés par des outils de construction tels que Webpack ou Babel.
 build/
 dist/
-
+test/
 
