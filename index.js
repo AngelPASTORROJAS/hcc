@@ -37,7 +37,11 @@ app.get("/Inscription", (_req, res) => {
   });
 });
 
-/* Telling the server to listen on port 3000. */
 app.listen(3000, () => {
-  console.log("Server listening on port 3000");
+  console.log(`Serveur démarré en http://localhost:3000,
+  http://localhost:3000/Validation,
+  http://localhost:3000/Match,
+  http://localhost:3000/Adherent,
+  http://localhost:3000/Inscription,
+  `);
 });
