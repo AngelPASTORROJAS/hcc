@@ -1,7 +1,13 @@
+const { Adherent } = require("../../../model/adherent");
+
 require("dotenv-expand").expand(require("dotenv").config());
 const sqlite3 = require('sqlite3').verbose();
 
-// Fonction de sélection
+/**
+ * This function selects all data from a table Adherent.
+ * @returns {Promise<Adherent[]>} An async function that returns a Promise 
+ * If there is an error, the Promise rejects with the error object.
+ */
 async function selectData() {
   return new Promise((resolve, reject) => {
     // Open database file
