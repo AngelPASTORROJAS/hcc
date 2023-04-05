@@ -9,6 +9,7 @@ package-lock.json
 ##les répertoires de configuration des éditeurs Visual Studio Code et IntelliJ IDEA.
 .vscode/
 .idea/
+.env
 
 # Ignore les fichiers de logs et de sauvegarde
 ##les fichiers de journalisation et de sauvegarde.
