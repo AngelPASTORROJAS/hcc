@@ -1,23 +1,30 @@
 /* The above code is importing the express and sqlite3 modules. */
 const express = require("express");
+
 /* Creating an instance of the express module. */
 const app = express();
+
+/* These lines of code are importing the `dotenv` module and `dotenv-expand` module.
+The `dotenv` module loads environment variables from a `.env` file into `process.env`.
+
+The `dotenv-expand` module is used to expand any environment variables found in the loaded `.env` file.
+This allows the application to access environment variables defined in the `.env` file,
+which can be used to configure the application. */
+var dotenv = require('dotenv')
+var dotenvExpand = require('dotenv-expand')
+
+var myEnv = dotenv.config()
+dotenvExpand.expand(myEnv)
+// require("dotenv-expand").expand(require("dotenv").config()); //en une requête
 
 /* Importing the databaseBuilder module. */
 const DatabaseBuilder = require("./databaseBuilder");
 /* Creating a new database called database.db. */
-const db = new DatabaseBuilder("./data/mydatabase.db");
+const db = new DatabaseBuilder(process.env.ROUTE_MY_DATABASE);
 
+const adherentRoute = require("./app/Adherent/routes/adherent.route");
 
-/* Inserting a new row into the users table. The first argument is the SQL statement, and the second
-argument is an array of values to be inserted into the statement. */
-// db.run("INSERT INTO users (name) VALUES (?)", ["John Doe"]);
-
-app.get("/Adherent", (_req, res) => {
-  db.all("SELECT * FROM Adherent", (_err, rows) => {
-    res.json(rows);
-  });
-});
+app.use("/Adherent", adherentRoute.routes);
 
 app.get("/Validation", (_req, res) => {
   db.all("SELECT * FROM Validation", (_err, rows) => {
