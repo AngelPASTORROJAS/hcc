@@ -1,7 +1,7 @@
 const adherentService = require("../services/adherent.service");
 
-function getAdherent(_req, res) {
-    res.send(adherentService.selectData());
+async function getAdherent(_req, res) {
+    res.send(await adherentService.selectData());
 }
 
 module.exports = {
