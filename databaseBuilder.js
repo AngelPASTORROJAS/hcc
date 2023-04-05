@@ -2,13 +2,16 @@ const sqlite3 = require("sqlite3").verbose();
 
 class DatabaseBuilder {
   /**
-   * The constructor function creates a new database object and assigns it to the db property of the
-   * class
-   * @param {string} filename - The filename of the database.
+   * This is a constructor function that creates a new instance of a SQLite3 database and returns it.
+   * @param filename - The filename parameter is a string that represents the name of the SQLite
+   * database file that will be created or opened. It is used to initialize a new instance of the
+   * sqlite3.Database class.
+   * @returns The `this.db` object is being returned.
    */
   constructor(filename) {
     this.db = new sqlite3.Database(filename);
     this.build();
+    return this.db;
   }
 
   build() {
