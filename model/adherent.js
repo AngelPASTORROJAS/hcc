@@ -6,9 +6,7 @@ class Adherent {
      * a system or application. It could be a number or a string that uniquely identifies the member.
      * @param {String} email - The email parameter is a string that represents the email address of the
      * adherent.
-     * @param {String} mot_de_passe - "mot_de_passe" is a French term that translates to "password" in English.
-     * Therefore, the "mot_de_passe" parameter in the constructor function is used to store the
-     * password of the adherent (member) object being created.
+     * @param {String} mot_de_passe - the password of the adherent (member) object being created.
      * @param {String} role - The "role" parameter in the constructor is used to define the role or position of
      * the adherent in the system. It could be a user, admin, moderator, or any other role that is
      * relevant to the system.
