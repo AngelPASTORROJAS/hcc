@@ -7,6 +7,10 @@ routes.get("", function (req, res) {
   adherentControllers.getAdherent(req, res);
 });
 
+routes.post("", function (req, res) {
+  adherentControllers.postAdherent(req, res);
+});
+
 module.exports = {
   routes,
 };

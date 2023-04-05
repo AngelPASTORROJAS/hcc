@@ -14,6 +14,23 @@ async function getAdherent(_req, res) {
     res.send(await adherentService.selectData());
 }
 
+/**
+ * This function posts a new adherent with the provided email, password, and role to the database and
+ * returns the result.
+ * @param req - req stands for request and it is an object that contains information about the HTTP
+ * request that was made. It includes information such as the request method, headers, URL, and body.
+ * In this case, the body of the request contains the email, mot_de_passe, and role parameters.
+ * @param res - `res` is the response object that is sent back to the client after the server has
+ * processed the request. It contains information such as the status code, headers, and response body.
+ * @returns {Adherent[]} The id Adherent save
+ */
+async function postAdherent(req, res) {
+    const {email, mot_de_passe, role} = req.body
+    res.send(adherentService.insertData(email, mot_de_passe, role));
+}
+
+
 module.exports = {
-    getAdherent
+    getAdherent,
+    postAdherent
 }

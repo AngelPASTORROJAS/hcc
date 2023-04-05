@@ -4,6 +4,8 @@ const express = require("express");
 /* Creating an instance of the express module. */
 const app = express();
 
+app.use(express.json());
+
 /* These lines of code are importing the `dotenv` module and `dotenv-expand` module.
 The `dotenv` module loads environment variables from a `.env` file into `process.env`.
 
