@@ -13,7 +13,7 @@ async function selectData() {
     // Open database file
     let db = new sqlite3.Database(
       process.env.ROUTE_MY_DATABASE,
-      sqlite3.OPEN_READWRITE,
+      sqlite3.OPEN_READONLY,
       (err) => {
         if (err) {
           reject(err);
