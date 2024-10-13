@@ -1,22 +1,44 @@
+const Roles = require('./../enums/roles');
 
+/**
+ * La classe Adherent.
+ */
 class Adherent {
     /**
-     * This is a constructor function that creates an object with properties for an adherent's ID, email, password, and role.
-     * @param {Number} id_adherent - This parameter represents the unique identifier of an adherent (member) in
-     * a system or application. It could be a number or a string that uniquely identifies the member.
-     * @param {String} email - The email parameter is a string that represents the email address of the
-     * adherent.
-     * @param {String} mot_de_passe - the password of the adherent (member) object being created.
-     * @param {String} role - The "role" parameter in the constructor is used to define the role or position of
-     * the adherent in the system. It could be a user, admin, moderator, or any other role that is
-     * relevant to the system.
+     * INT
+     * @type {string } L'identifiant de l'adhérent 
      */
-    constructor(id_adherent, email, mot_de_passe, role){
-        this.id_adherent = id_adherent
-        this.email = email
-        this.mot_de_passe = mot_de_passe
-        this.role = role
-    }
+    id
+    /**
+     * VARCHAR(50)
+     * @type {String} Le nom de l'adhérent.
+     */
+    nom
+    /**
+     * VARCHAR(50)
+     * @type {String} Le prénom de l'adhérent.
+     */
+    prenom
+    /**
+     * VARCHAR(100)
+     * @type {String} L'adresse email de l'adhérent.
+     */
+    email
+    /**
+     * VARCHAR(100)
+     * @type {String} Le mot de passe de l'adhérent.
+     */
+    mot_de_passe
+    /**
+     * VARCHAR(20)
+     * @type {Roles} Le rôle de l'adhérent. Doit être une des valeurs de l'énumération Roles.
+     */
+    role
+    /**
+     * DATE
+     * @type {Date} La date d'inscription de l'adhérent.
+     */
+    date_inscription
 }
 
 module.exports = {
